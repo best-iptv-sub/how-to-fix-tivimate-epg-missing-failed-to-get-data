@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Fix TiviMate EPG Missing — Failed to Get Data from Server (2026)</title>
+  <meta name="description" content="Complete guide to fixing 'No Information' or 'Failed to get data from server' errors in TiviMate EPG. 5 proven fixes that work in 2026 — refresh, timezone, cache, URL check & more.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://best-iptv-sub.github.io/how-to-fix-tivimate-epg-missing-failed-to-get-data/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { manrope: ['Manrope', 'sans-serif'] },
+          colors: { red: { 600: '#ef233c', 700: '#c81d33' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Manrope', sans-serif; }
+    body { background-color: #09090b; }
+    .accent { color: #ef233c; }
+    .btn-primary {
+      background: #ef233c;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: #c81d33; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.15);
+      color: white;
+      padding: 13px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.08); }
+    .card {
+      background: rgba(24,24,27,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+    }
+    .gradient-text {
+      background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-label {
+      display: inline-block;
+      background: rgba(239,35,60,0.1);
+      border: 1px solid rgba(239,35,60,0.25);
+      color: #ef233c;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+    }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; display: inline-block; }
+    .fix-num {
+      width: 44px; height: 44px;
+      background: #ef233c;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: white; flex-shrink: 0;
+    }
+    .grid-bg {
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    }
+    .live-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: #ef233c;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(239,35,60,0.4); }
+      50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(239,35,60,0); }
+    }
+    @media(max-width:768px){
+      .hero-title { font-size: 2.4rem !important; }
+    }
+    .wa-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:waRing 2s ease-out infinite;}
+    @keyframes waRing{0%{transform:scale(1);opacity:0.6}100%{transform:scale(2.1);opacity:0}}
+    .wa-btn{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:white;padding:16px 36px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;transition:background 0.2s,transform 0.15s;box-shadow:0 4px 24px rgba(37,211,102,0.3);}
+    .wa-btn:hover{background:#1ebe4a;transform:translateY(-2px);box-shadow:0 8px 36px rgba(37,211,102,0.5);}
+    .symptom-table { width:100%; border-collapse:collapse; font-size:14px; }
+    .symptom-table th { text-align:left; padding:12px 16px; color:rgba(255,255,255,0.5); font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .symptom-table td { padding:14px 16px; border-bottom:1px solid rgba(255,255,255,0.05); color:rgba(255,255,255,0.8); }
+    .symptom-table tr:hover td { background:rgba(255,255,255,0.02); }
+  </style>
+</head>
+<body class="text-white antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <div class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-md bg-red-600 flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2H6v2h12v-2h-2v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+      </div>
+      <span class="font-bold text-lg tracking-tight">EPG<span class="accent">Fix</span></span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+      <a href="#fixes" class="hover:text-white transition-colors">Fixes</a>
+      <a href="#troubleshoot" class="hover:text-white transition-colors">Troubleshoot</a>
+      <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      <a href="#order" class="hover:text-white transition-colors">Free Trial</a>
+    </nav>
+    <a href="#order" class="btn-primary" style="padding:10px 22px;font-size:14px;">Get IPTV Trial</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px]" style="background:rgba(239,35,60,0.06);"></div>
+    <div class="grid-bg absolute inset-0"></div>
+  </div>
+  <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border border-white/10 bg-white/5 backdrop-blur-sm text-xs font-semibold text-red-200 tracking-wide">
+      <span class="live-dot"></span>
+      <span>Updated June 2026 — Step-by-step EPG troubleshooting guide</span>
+    </div>
+    <h1 class="hero-title gradient-text font-extrabold leading-[1.1] mb-6" style="font-size:4rem;">
+      How to Fix TiviMate EPG Missing<br><span class="accent" style="-webkit-text-fill-color:#ef233c;">Failed to Get Data from Server</span>
+    </h1>
+    <p class="text-zinc-400 text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
+      Complete guide to fixing "No Information" or "Failed to get data from server" errors in TiviMate EPG. 5 proven fixes that work in 2026.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#fixes" class="btn-primary text-base" style="padding:16px 40px;">Jump to Fixes</a>
+      <a href="#order" class="btn-outline text-base">Get IPTV with Working EPG</a>
+    </div>
+  </div>
+  <div class="relative z-10 w-full mt-20 border-y border-white/5 bg-white/[0.02] py-8">
+    <div class="max-w-lg mx-auto px-4 text-center">
+      <img src="assets/devices.webp" alt="TiviMate EPG fix works on all devices — Firestick, Smart TV, Android" class="mx-auto w-full opacity-90 drop-shadow-[0_0_40px_rgba(239,35,60,0.15)]">
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ANSWER -->
+<section class="py-16 px-4 border-y border-white/5 bg-white/[0.015]">
+  <div class="max-w-4xl mx-auto text-center">
+    <span class="section-label">Quick Answer</span>
+    <h2 class="gradient-text text-3xl md:text-4xl font-extrabold mt-4 mb-6">Why Is TiviMate EPG Not Working?</h2>
+    <div class="card p-8 max-w-2xl mx-auto">
+      <p class="text-zinc-300 text-lg leading-relaxed">
+        EPG issues in TiviMate are <strong class="text-white">almost always caused by one of three things</strong>: 
+        an <strong class="accent">incorrect or expired EPG URL</strong>, a <strong class="accent">timezone misalignment</strong> 
+        between the server and your device, or a <strong class="accent">corrupted EPG cache</strong> that needs to be cleared. 
+        The fixes below resolve over 95% of "No Information" and "Failed to get data from server" errors.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FIXES -->
+<section id="fixes" class="py-24 px-4 max-w-4xl mx-auto">
+  <div class="text-center mb-16">
+    <span class="section-label">Step by Step</span>
+    <h2 class="gradient-text text-4xl md:text-5xl font-extrabold mt-4">5 Proven Fixes for TiviMate EPG</h2>
+    <p class="text-zinc-400 text-lg mt-4 max-w-2xl mx-auto">Try these in order. Each fix tackles a different root cause of EPG failure.</p>
+  </div>
+
+  <div class="space-y-8">
+    <!-- Fix 1 -->
+    <div class="card p-7 flex gap-5 items-start">
+      <div class="fix-num">1</div>
+      <div class="flex-1">
+        <h3 class="font-bold text-white text-xl mb-2">Force Manual EPG Refresh</h3>
+        <p class="text-zinc-400 leading-relaxed mb-4">Sometimes the EPG simply hasn't downloaded yet. A manual refresh forces TiviMate to pull the latest data immediately.</p>
+        <div class="bg-white/[0.03] border border-white/5 rounded-xl p-5 text-sm text-zinc-300 space-y-2">
+          <p><strong class="text-white">Steps:</strong></p>
+          <p>1. Open TiviMate → go to <strong class="text-white">Settings</strong> (gear icon)</p>
+          <p>2. Scroll to <strong class="text-white">EPG</strong> → tap <strong class="text-white">Update Now</strong></p>
+          <p>3. Wait 30–60 seconds for the download to complete</p>
+          <p>4. Go back to the channel list and check if guide data appears</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fix 2 -->
+    <div class="card p-7 flex gap-5 items-start">
+      <div class="fix-num">2</div>
+      <div class="flex-1">
+        <h3 class="font-bold text-white text-xl mb-2">Verify the EPG URL Is Correct</h3>
+        <p class="text-zinc-400 leading-relaxed mb-4">The EPG source URL is separate from your M3U playlist URL. If it's wrong, expired, or missing, TiviMate cannot fetch guide data.</p>
+        <div class="bg-white/[0.03] border border-white/5 rounded-xl p-5 text-sm text-zinc-300 space-y-2">
+          <p><strong class="text-white">Steps:</strong></p>
+          <p>1. Go to <strong class="text-white">Settings → EPG → EPG Sources</strong></p>
+          <p>2. Tap the source you're using and check the URL</p>
+          <p>3. Valid EPG URLs end in <code class="accent">.xml</code>, <code class="accent">.xml.gz</code>, or are provided by your IPTV provider as an <code class="accent">xtream: //</code> link</p>
+          <p>4. Paste the URL into a browser on your PC — if it doesn't download an XML file, the URL is dead</p>
+          <p>5. Contact your IPTV provider for a working EPG URL if needed</p>
+        </div>
+        <div class="mt-4 flex items-start gap-3 p-4 border border-yellow-600/20 bg-yellow-600/5 rounded-xl">
+          <span class="text-yellow-400 font-bold text-lg leading-none mt-0.5">!</span>
+          <p class="text-yellow-300 text-sm">Many providers use the same URL for M3U and EPG, but some give separate URLs. Make sure you've entered the EPG-specific link under EPG Sources, not under Playlist.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fix 3 -->
+    <div class="card p-7 flex gap-5 items-start">
+      <div class="fix-num">3</div>
+      <div class="flex-1">
+        <h3 class="font-bold text-white text-xl mb-2">Set Correct Timezone</h3>
+        <p class="text-zinc-400 leading-relaxed mb-4">A timezone mismatch between your device and the EPG server causes guide data to appear at the wrong time — or not show at all.</p>
+        <div class="bg-white/[0.03] border border-white/5 rounded-xl p-5 text-sm text-zinc-300 space-y-2">
+          <p><strong class="text-white">Steps:</strong></p>
+          <p>1. Open <strong class="text-white">Settings → EPG → Time Offset</strong></p>
+          <p>2. Enable <strong class="text-white">Use System Time Zone</strong> (recommended)</p>
+          <p>3. If that doesn't work, manually set the offset to match your region (e.g., UTC-5 for US Eastern, UTC-8 for US Pacific)</p>
+          <p>4. Go back and do a manual EPG refresh (Fix 1)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fix 4 -->
+    <div class="card p-7 flex gap-5 items-start">
+      <div class="fix-num">4</div>
+      <div class="flex-1">
+        <h3 class="font-bold text-white text-xl mb-2">Clear EPG Cache</h3>
+        <p class="text-zinc-400 leading-relaxed mb-4">Corrupted cached data is a common cause of the "Failed to get data from server" error. Clearing the cache forces a fresh download.</p>
+        <div class="bg-white/[0.03] border border-white/5 rounded-xl p-5 text-sm text-zinc-300 space-y-2">
+          <p><strong class="text-white">Steps:</strong></p>
+          <p>1. Go to <strong class="text-white">Settings → EPG → Clear Cache</strong></p>
+          <p>2. Wait for the cache to clear (usually instant)</p>
+          <p>3. Go to <strong class="text-white">Settings → EPG → Update Now</strong> to download fresh data</p>
+          <p>4. If the issue persists, restart the TiviMate app completely</p>
+        </div>
+        <div class="mt-4 flex items-start gap-3 p-4 border border-blue-600/20 bg-blue-600/5 rounded-xl">
+          <span class="text-blue-400 font-bold text-lg leading-none mt-0.5">i</span>
+          <p class="text-blue-300 text-sm">Clearing the EPG cache does NOT delete your playlist or channel list. It only removes the stored guide data, so it's completely safe to do.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fix 5 -->
+    <div class="card p-7 flex gap-5 items-start">
+      <div class="fix-num">5</div>
+      <div class="flex-1">
+        <h3 class="font-bold text-white text-xl mb-2">Switch to Xtream Codes API Instead of M3U</h3>
+        <p class="text-zinc-400 leading-relaxed mb-4">Xtream Codes API automatically includes EPG data alongside your channel list. Switching from M3U URL to Xtream API often resolves EPG issues instantly.</p>
+        <div class="bg-white/[0.03] border border-white/5 rounded-xl p-5 text-sm text-zinc-300 space-y-2">
+          <p><strong class="text-white">Steps:</strong></p>
+          <p>1. Ask your IPTV provider for the <strong class="text-white">Xtream Codes API</strong> login (DNS, username, password)</p>
+          <p>2. In TiviMate: <strong class="text-white">Settings → Playlists → Add Playlist → Xtream Codes API</strong></p>
+          <p>3. Enter the server DNS, username, and password provided by your provider</p>
+          <p>4. TiviMate will auto-pull channels <strong class="text-white">and</strong> EPG data in one go</p>
+          <p>5. Remove the old M3U playlist after confirming EPG works on the new one</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fix 6 -->
+    <div class="card p-7 flex gap-5 items-start border-red-600/30" style="background:rgba(239,35,60,0.05);">
+      <div class="fix-num" style="background:#c81d33;">6</div>
+      <div class="flex-1">
+        <h3 class="font-bold text-white text-xl mb-2">Add a Public EPG Source as Backup</h3>
+        <p class="text-zinc-400 leading-relaxed mb-4">If your provider's EPG is unreliable, add a free public EPG source as a secondary guide. These community sources cover thousands of channels worldwide.</p>
+        <div class="bg-white/[0.03] border border-white/5 rounded-xl p-5 text-sm text-zinc-300 space-y-2">
+          <p><strong class="text-white">Recommended public EPG sources (free):</strong></p>
+          <p>• <code class="accent">https://epg.pw/api/epg.xml.gz</code> — comprehensive global EPG</p>
+          <p>• <code class="accent">https://epgshare01.online/epgshare01/epg_ripper_US.xml.gz</code> — US-focused guide</p>
+          <p>• <code class="accent">https://i.mjh.nz/iPlayTV/</code> — Australian & NZ channels</p>
+          <p>• <code class="accent">https://www.epg.best/</code> — premium EPG with free tier</p>
+          <p><strong class="text-white">How to add:</strong> Settings → EPG → EPG Sources → Add Source → paste URL</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TROUBLESHOOTING TABLE -->
+<section id="troubleshoot" class="py-24 px-4 border-t border-white/5 bg-white/[0.015]">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-label">Troubleshooting</span>
+      <h2 class="gradient-text text-4xl md:text-5xl font-extrabold mt-4">EPG Symptom Reference Table</h2>
+      <p class="text-zinc-400 text-lg mt-4 max-w-2xl mx-auto">Match your symptom below to find the right fix quickly.</p>
+    </div>
+    <div class="card overflow-hidden">
+      <table class="symptom-table">
+        <thead>
+          <tr>
+            <th>Symptom</th>
+            <th>Likely Cause</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"Failed to get data from server"</td>
+            <td>Dead EPG URL / network issue</td>
+            <td>Fix 2 (verify URL) + Fix 4 (clear cache)</td>
+          </tr>
+          <tr>
+            <td>"No Information" on all channels</td>
+            <td>No EPG source assigned</td>
+            <td>Fix 2 (add EPG URL) + Fix 1 (refresh)</td>
+          </tr>
+          <tr>
+            <td>"No Information" on some channels</td>
+            <td>Partial EPG coverage from provider</td>
+            <td>Fix 6 (add public EPG backup)</td>
+          </tr>
+          <tr>
+            <td>Guide shows wrong program times</td>
+            <td>Timezone offset misconfigured</td>
+            <td>Fix 3 (set correct timezone)</td>
+          </tr>
+          <tr>
+            <td>EPG worked before, stopped suddenly</td>
+            <td>Corrupted cache / provider changed URL</td>
+            <td>Fix 4 (clear cache) + Fix 2 (check URL)</td>
+          </tr>
+          <tr>
+            <td>EPG loads but is blank after refresh</td>
+            <td>Server returned empty data</td>
+            <td>Fix 5 (switch to Xtream API) + Fix 6</td>
+          </tr>
+          <tr>
+            <td>"EPG source not found" error</td>
+            <td>URL malformed or removed</td>
+            <td>Fix 2 (get correct URL from provider)</td>
+          </tr>
+          <tr>
+            <td>EPG only works for a few hours after refresh</td>
+            <td>Stale cache / outdated data</td>
+            <td>Fix 4 + set auto-update interval to 6h</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF CAROUSEL -->
+<section class="py-24 px-4 border-t border-white/5 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-label">Real Proof</span>
+      <h2 class="gradient-text text-4xl md:text-5xl font-extrabold mt-4">Customers Watching Live</h2>
+      <p class="text-zinc-400 text-lg mt-4 max-w-xl mx-auto">Real screenshots sent by our subscribers — unedited, straight from their screens.</p>
+    </div>
+  </div>
+  <div class="relative" style="mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);">
+    <div class="proof-track flex gap-5 w-max" id="proofTrack">
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0006.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0006.jpg" alt="Customer proof screenshot 1" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0007.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0007.jpg" alt="Customer proof screenshot 2" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0008.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0008.jpg" alt="Customer proof screenshot 3" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0009.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0009.jpg" alt="Customer proof screenshot 4" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0010.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0010.jpg" alt="Customer proof screenshot 5" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0011.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0011.jpg" alt="Customer proof screenshot 6" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0012.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0012.jpg" alt="Customer proof screenshot 7" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0013.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0013.jpg" alt="Customer proof screenshot 8" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0015.jpg')">
+        <img src="assets/proof/IMG-20240222-WA0015.jpg" alt="Customer proof screenshot 9" class="proof-img">
+        <div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      </div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0006.jpg')"><img src="assets/proof/IMG-20240222-WA0006.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0007.jpg')"><img src="assets/proof/IMG-20240222-WA0007.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0008.jpg')"><img src="assets/proof/IMG-20240222-WA0008.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0009.jpg')"><img src="assets/proof/IMG-20240222-WA0009.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0010.jpg')"><img src="assets/proof/IMG-20240222-WA0010.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0011.jpg')"><img src="assets/proof/IMG-20240222-WA0011.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0012.jpg')"><img src="assets/proof/IMG-20240222-WA0012.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0013.jpg')"><img src="assets/proof/IMG-20240222-WA0013.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      <div class="proof-slide cursor-pointer flex-shrink-0" onclick="openModal('assets/proof/IMG-20240222-WA0015.jpg')"><img src="assets/proof/IMG-20240222-WA0015.jpg" alt="" class="proof-img"><div class="proof-overlay"><svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF MODAL -->
+<div id="proofModal" onclick="closeModal()" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);align-items:center;justify-content:center;padding:24px;">
+  <div onclick="event.stopPropagation()" style="position:relative;max-width:480px;width:100%;margin:auto;">
+    <img id="modalImg" src="" alt="Proof screenshot" style="width:100%;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.1);">
+    <button onclick="closeModal()" style="position:absolute;top:-14px;right:-14px;width:36px;height:36px;background:#ef233c;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;font-weight:bold;line-height:1;">✕</button>
+  </div>
+</div>
+
+<style>
+  .proof-track { animation: proofScroll 30s linear infinite; }
+  .proof-track:hover { animation-play-state: paused; }
+  @keyframes proofScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .proof-slide { position:relative; width:200px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); }
+  .proof-img { width:200px; height:340px; object-fit:cover; display:block; transition:transform 0.3s; }
+  .proof-slide:hover .proof-img { transform:scale(1.04); }
+  .proof-overlay { position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;transition:background 0.25s;opacity:0; }
+  .proof-slide:hover .proof-overlay { background:rgba(0,0,0,0.45);opacity:1; }
+  #proofModal { display:none; }
+  #proofModal.open { display:flex !important; }
+</style>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 px-4 max-w-4xl mx-auto">
+  <div class="text-center mb-16">
+    <span class="section-label">FAQ</span>
+    <h2 class="gradient-text text-4xl font-extrabold mt-4">EPG Troubleshooting FAQ</h2>
+  </div>
+  <div class="space-y-2" id="faq-container">
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">Why does TiviMate say "Failed to get data from server"?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        This error usually means the EPG URL is invalid, the server is unreachable, or the cached data is corrupted. Start with Fix 2 (verify the URL by pasting it in a browser) and Fix 4 (clear the EPG cache), then retry.
+      </div>
+    </div>
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">What is the correct EPG URL format for TiviMate?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        TiviMate accepts EPG URLs that end in <code>.xml</code> or <code>.xml.gz</code>. Some providers also support Xtream Codes API which auto-includes EPG data. The URL should always start with <code>http://</code> or <code>https://</code>.
+      </div>
+    </div>
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">How often does TiviMate update the EPG automatically?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        By default, TiviMate updates EPG every 12 hours. You can change this in Settings → EPG → Update Interval. Setting it to 3 or 6 hours is recommended for live sports and news channels.
+      </div>
+    </div>
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">Can I use multiple EPG sources in TiviMate?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        Yes. Go to Settings → EPG → EPG Sources → Add Source. You can add as many EPG URLs as you want. TiviMate will merge them into a single guide. This is useful when your provider's EPG doesn't cover all channels — add a public backup source to fill the gaps.
+      </div>
+    </div>
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">Does clearing EPG cache delete my channels?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        No. Clearing the EPG cache only removes the stored guide data (program names, times, descriptions). Your playlist, channel list, and all settings remain intact. It's completely safe and is the first thing you should try when EPG stops working.
+      </div>
+    </div>
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">What's the difference between M3U and Xtream Codes for EPG?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        With M3U, the EPG URL is separate from your channel playlist — you need to add both. With Xtream Codes API, the EPG is bundled with the channel data automatically. This is why switching to Xtream Codes API (Fix 5) often fixes EPG issues: there's no risk of a mismatched or missing EPG URL.
+      </div>
+    </div>
+    <div class="faq-item card px-6 py-5 cursor-pointer" onclick="toggleFaq(this)">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-white">Why does my EPG show the wrong program times?</span>
+        <span class="faq-icon accent font-bold text-xl">+</span>
+      </div>
+      <div class="faq-answer mt-3 text-zinc-400 text-sm leading-relaxed">
+        This is almost always a timezone offset issue. Go to Settings → EPG → Time Offset and enable "Use System Time Zone." If that doesn't fix it, manually set the offset (e.g., UTC-5 for Eastern US, UTC-8 for Pacific). Then do a manual EPG refresh.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER / CTA -->
+<section id="order" class="py-24 px-4 border-t border-white/5">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="section-label">Get IPTV with Working EPG</span>
+    <h2 class="gradient-text text-4xl md:text-5xl font-extrabold mt-4 mb-6">Tired of Fixing EPG? Get a Provider That Just Works</h2>
+    <p class="text-zinc-400 text-lg mb-10 max-w-xl mx-auto">Our IPTV service includes fully configured EPG out of the box — no URL hunting, no timezone fiddling. Start with a free 24-hour trial.</p>
+    <div class="card p-10 md:p-14 flex flex-col items-center gap-7">
+      <div class="relative flex items-center justify-center" style="width:96px;height:96px;">
+        <span class="wa-ring"></span>
+        <span class="wa-ring" style="animation-delay:0.8s;"></span>
+        <div style="width:76px;height:76px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;box-shadow:0 8px 32px rgba(37,211,102,0.4);">
+          <svg width="42" height="42" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.826.737 5.48 2.027 7.782L0 32l8.418-2.006A15.938 15.938 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0z" fill="white"/><path d="M23.676 19.926c-.34-.17-2.015-1.002-2.328-1.116-.313-.113-.54-.17-.768.17-.228.34-.883 1.116-1.082 1.346-.2.228-.398.255-.738.085-.34-.17-1.435-.532-2.734-1.697-1.01-.907-1.692-2.027-1.89-2.367-.198-.34-.02-.523.15-.692.153-.152.34-.397.51-.595.17-.198.227-.34.34-.567.114-.227.057-.425-.028-.595-.085-.17-.768-1.866-1.053-2.555-.277-.672-.56-.58-.768-.59-.2-.01-.425-.01-.652-.01s-.595.085-.908.425c-.312.34-1.194 1.165-1.194 2.84 0 1.675 1.223 3.293 1.393 3.52.17.228 2.407 3.68 5.833 5.159.815.353 1.451.563 1.947.72.818.26 1.563.223 2.151.135.656-.097 2.015-.824 2.3-1.619.284-.795.284-1.477.198-1.618-.085-.142-.313-.227-.652-.397z" fill="#25D366"/></svg>
+        </div>
+      </div>
+      <div>
+        <p class="text-white font-bold text-xl mb-2">Chat with us directly on WhatsApp</p>
+        <p class="text-zinc-400 text-sm">We'll set up your free 24h trial with fully configured EPG — no forms, no waiting</p>
+      </div>
+      <a href="https://wa.me/21623179016?text=Hi!%20I%27d%20like%20to%20start%20my%20free%2024-hour%20IPTV%20trial%20%F0%9F%99%8F" class="wa-btn" target="_blank" rel="noopener">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.826.737 5.48 2.027 7.782L0 32l8.418-2.006A15.938 15.938 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0z" fill="white"/><path d="M23.676 19.926c-.34-.17-2.015-1.002-2.328-1.116-.313-.113-.54-.17-.768.17-.228.34-.883 1.116-1.082 1.346-.2.228-.398.255-.738.085-.34-.17-1.435-.532-2.734-1.697-1.01-.907-1.692-2.027-1.89-2.367-.198-.34-.02-.523.15-.692.153-.152.34-.397.51-.595.17-.198.227-.34.34-.567.114-.227.057-.425-.028-.595-.085-.17-.768-1.866-1.053-2.555-.277-.672-.56-.58-.768-.59-.2-.01-.425-.01-.652-.01s-.595.085-.908.425c-.312.34-1.194 1.165-1.194 2.84 0 1.675 1.223 3.293 1.393 3.52.17.228 2.407 3.68 5.833 5.159.815.353 1.451.563 1.947.72.818.26 1.563.223 2.151.135.656-.097 2.015-.824 2.3-1.619.284-.795.284-1.477.198-1.618-.085-.142-.313-.227-.652-.397z" fill="#25D366"/></svg>
+        Start My Free Trial on WhatsApp
+      </a>
+      <p class="text-zinc-500 text-sm">+216 23 179 016 &nbsp;·&nbsp; Available 24/7</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 px-4 border-t border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-md bg-red-600 flex items-center justify-center">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2H6v2h12v-2h-2v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+        </div>
+        <span class="font-bold">EPG<span class="accent">Fix</span></span>
+        <span class="text-zinc-600 text-sm ml-2">- Fix TiviMate EPG Missing 2026</span>
+      </div>
+      <div class="flex gap-6 text-zinc-500 text-sm">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors">Contact</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+    </div>
+    <p class="text-zinc-700 text-xs text-center mt-8">© 2026 EPGFix. This guide is for educational and informational purposes. TiviMate is a trademark of its respective owner. Always verify local regulations regarding IPTV in your country.</p>
+  </div>
+</footer>
+
+<script>
+  function openModal(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('proofModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('proofModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  function toggleFaq(item) {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
